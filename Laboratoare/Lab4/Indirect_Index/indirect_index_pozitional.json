@@ -1,0 +1,25 @@
+{
+    "python": [
+        "D:\\Laboratoare\\Lab4\\dummy_struct\\d1.txt",
+        "D:\\Laboratoare\\Lab4\\dummy_struct\\d2.txt"
+    ],
+    "program": [
+        "D:\\Laboratoare\\Lab4\\dummy_struct\\d1.txt",
+        "D:\\Laboratoare\\Lab4\\dummy_struct\\d3.txt"
+    ],
+    "languag": [
+        "D:\\Laboratoare\\Lab4\\dummy_struct\\d1.txt"
+    ],
+    "type": [
+        "D:\\Laboratoare\\Lab4\\dummy_struct\\d2.txt"
+    ],
+    "snake": [
+        "D:\\Laboratoare\\Lab4\\dummy_struct\\d2.txt"
+    ],
+    "java": [
+        "D:\\Laboratoare\\Lab4\\dummy_struct\\d3.txt"
+    ],
+    "easi": [
+        "D:\\Laboratoare\\Lab4\\dummy_struct\\d3.txt"
+    ]
+}
