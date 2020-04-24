@@ -164,37 +164,6 @@ def read_stopwords_or_exceptions(file_path,list_of_words):
             letter = file.read(1)
 
 
-def json_dump(data, path, sort_keys=False, indent=4):
-    """
-    Dump data to json file in path
-    :param data: data to be dumped
-    :param path: path to save the dumped file
-    :param sort_keys: if you want sorting, default is False
-    :param indent: indentation to be used, default is 4 spaces
-    :return: None
-    """
-    with open(path, 'w') as dump_file:
-        json.dump(data, dump_file, sort_keys=sort_keys, indent=indent)
-
-def json_load(json_file,key):
-    """
-    Function to load json dumped file
-    :param json_file:
-    :return:
-    """
-    with open(json_file) as json_loaded_file:
-        try:
-            if key is None:
-                data = json.load(json_loaded_file)
-            else:
-                data = json.load(json_loaded_file)[key]
-            json_loaded_file.close()
-            return data
-        except Exception as e:
-            print(e)
-            return None
-
-
 # def create_indirect_index(dict,key):
 #     for word in dict:
 #         if word not in indirect_index_cantitativ:
@@ -301,46 +270,6 @@ def check_for_words():
                     operands_dict[operand].add(doc['d'])
                 break
 
-def boolean_search():
-    readSentence()
-    check_for_words()
-    global result
-    parser = 1
-    try:
-        result = result.union(operands_dict[operands[0]])
-    except:
-        print("Cuvantul nu se gaseste in indexul indirect")
-    #print(operands_dict[operands[0]])
-    for operator in operators:
-        if operator == '|':
-            try:
-                result = result.union(operands_dict[operands[parser]])
-            except:
-                print("Cuvantul nu se gaseste in indexul indirect")
-            print ('Sau')
-        elif operator == '!':
-            try:
-                #interm_result = set(files).difference(operands_dict[operands[parser]])
-                if len(result) == 0:
-                    pass
-                else:
-                    result = result.difference(operands_dict[operands[parser]])
-            except:
-                print("Cuvantul nu se gaseste in indexul indirect")
-            print("Negat")
-        else:
-            pass
-            try:
-                if len(result) == 0:
-                    result = result.union(operands_dict[operands[parser]])
-                else:
-                    result = result.intersection(operands_dict[operands[parser]])
-            except:
-                print("Cuvantul nu se gaseste in indexul indirect")
-            print("AND")
-        parser += 1
-    print(result)
-
 def boolean_search_mongo():
     readSentence()
     result2 = None
@@ -388,41 +317,65 @@ def boolean_search_mongo():
     #print(result)
 
     #return result
-def calculate_tf_and_idf():
+# def calculate_tf_and_idf():
+#
+#     for cuvant in indirect_index_cantitativ:
+#         tf[cuvant["term"]] = {}
+#         for doc in cuvant["docs"]:
+#             tf[cuvant["term"]][doc["d"]] = float(doc["count"])/words_counter[doc["d"]]
+#         idf[cuvant["term"]] = math.log(number_of_files/(len(cuvant["docs"])))
+def calculate_tf_and_idf(): #Proiect
+    print(words)
+    for key in words.keys():
+        for doc in words[key].keys():
+            tf[doc] = {}
+            print(words[key][doc])
+            for cuvant in words[key][doc]:
+                #tf[doc][cuvant] = 0
+                tf[doc][cuvant] = float(words[key][doc][cuvant])/words_counter[doc]
+                print(tf[doc][cuvant])
 
     for cuvant in indirect_index_cantitativ:
-        tf[cuvant["term"]] = {}
-        for doc in cuvant["docs"]:
-            tf[cuvant["term"]][doc["d"]] = float(doc["count"])/words_counter[doc["d"]]
-        idf[cuvant["term"]] = math.log(number_of_files/(len(cuvant["docs"])))
+
+        idf[cuvant["term"]] = math.log(number_of_files / (len(cuvant["docs"])))
+        #print(idf[cuvant["term"]])
+
 def calculate_asoc_vector(dict,doc):
 
     asoc_vector[doc] = {}
     for word in dict:
-        asoc_vector[doc][word] = tf[word][doc] * idf[word]
+        asoc_vector[doc][word] = tf[doc][word] * idf[word]
     #print(asoc_vector)
 
 
 def calculate_tf_idf_query():
-    global info_from_mongo
+    global info_collection
+    total_cuvinte = 0
     temp = {}
     for word in operands:
         if word not in temp:
             temp[word] = 1
         else:
             temp[word] += 1
+        total_cuvinte += 1
     tf_query = {}
     global asoc_vector_query
     for word in temp:
         print (word)
-        tf_query[word] = float(temp[word])/len(operands)
+        tf_query[word] = float(temp[word])/total_cuvinte
         try:
-            idf_query = info_from_mongo['idf'][word]
+            cursor_mongo = info_collection.find({'idf.{}'.format(word): {"$exists": True}}, {'idf.{}'.format(word): 1, "_id": 0})
+            #cursor_mongo = info_collection.find({'idf': {"$exists": True}}, {'idf': 1, "_id": 0})
+            for temp_dict in cursor_mongo:
+                temp_dict = dict(temp_dict)
+                print(temp_dict)
+                idf_query = temp_dict['idf'][word]
             asoc_vector_query[word] = tf_query[word] * idf_query
         except:
             print("Cuvantul nu este in tf")
 
     calc_norma_euclidiana(temp,'query')
+
 def vectorial_search():
     global info_from_mongo
     boolean_search_mongo()
@@ -431,23 +384,33 @@ def vectorial_search():
     for doc in result:
         cos_doc[doc] = 0
         for word in asoc_vector_query:
-            try:
-                cos_doc[doc] += (asoc_vector_query[word] * info_from_mongo['asoc_vector'][doc][word])
-                cos_doc[doc] /= (eucl[doc] * eucl['query'])
-            except:
-                #print("Cuvantul din interogare nu se gaseste in document")
-                pass
+            cursor_mongo = info_collection.find({"asoc_vector.{}.{}".format(doc,word): {"$exists": True}}, {"asoc_vector.{}.{}".format(doc,word): 1, "_id": 0})
+            for temp_dict in cursor_mongo:
+                temp_dict = dict(temp_dict)
+                print(temp_dict)
+                #info_from_mongo.update(temp_dict)
+                try:
+                    cos_doc[doc] += (asoc_vector_query[word] * temp_dict['asoc_vector'][doc][word])
+                    print(asoc_vector_query[word])
 
-    sorted_dict = sorted(cos_doc.items(), key=lambda x: x[1],reverse = True)
-    #print(sorted_dict)
-    #print(eucl)
-    #print(idf)
-    #print(tf)
+                except:
+                    # print("Cuvantul din interogare nu se gaseste in document")
+                    pass
+        print(cos_doc[doc])
+        cos_doc[doc] /= (eucl[doc] * eucl['query'])
+        print((eucl[doc] * eucl['query']))
+
+    sorted_dict = sorted(cos_doc.items(), key=lambda x: x[1], reverse=True)
+    # print(sorted_dict)
+    # print(eucl)
+    # print(idf)
+    # print(tf)
     text_to_print = ''
     for item in sorted_dict:
-        text_to_print +=str(item) + "\n"
-    textBox2.insert(END,text_to_print)
-    #textBox2.insert("\n")
+        text_to_print += str(item) + "\n"
+    textBox2.insert(END, text_to_print)
+    # textBox2.insert("\n")
+
 def calc_norma_euclidiana(dict,key):
     global info_from_mongo
     suma = 0.0
@@ -483,11 +446,15 @@ if __name__ == "__main__":
             temp_dict = dict(temp_dict)
             del temp_dict['_id']
             for working_key in temp_dict:
+                words_counter[working_key] = 0
                 create_indirect_index_new(temp_dict[working_key],working_key)
-                words_counter[working_key] = len(temp_dict[working_key])
-                print(working_key)
+                for key in temp_dict[working_key]:
+                    words_counter[working_key] += temp_dict[working_key][key]
+                #print (words_counter[working_key])
+                #print(working_key)
                 number_of_files += 1
-
+    for key in words:
+        del words[key]['_id']
     calculate_tf_and_idf()
     for key in direct_index:
         cursor_mongo = mydb[direct_index[key]].find({key: {"$exists": True}}, {key: 1})
@@ -502,11 +469,11 @@ if __name__ == "__main__":
     info_to_mongo['idf'] = idf
     info_to_mongo['asoc_vector'] = asoc_vector
     info_collection.insert(info_to_mongo)
-    for key in ['tf','idf','asoc_vector']:
-        cursor_mongo = info_collection.find({key: {"$exists": True}}, {key: 1,"_id":0})
-        for temp_dict in cursor_mongo:
-            temp_dict = dict(temp_dict)
-            info_from_mongo.update( temp_dict)
+    # for key in ['tf','idf','asoc_vector']:
+    #     cursor_mongo = info_collection.find({key: {"$exists": True}}, {key: 1,"_id":0})
+    #     for temp_dict in cursor_mongo:
+    #         temp_dict = dict(temp_dict)
+    #         info_from_mongo.update( temp_dict)
 
     #json_dump(indirect_index_cantitativ,'xxx.json')
     indirect_index_cantitativ_coll.insert_many(indirect_index_cantitativ)
