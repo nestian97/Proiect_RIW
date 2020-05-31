@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 import socket
 import datetime
 import os
+import dns
 ##########################################################################
 ########################### VARIABLES ####################################
 ##########################################################################
@@ -25,25 +26,19 @@ def recvall(sock):
         if b'</html>' in part.lower() or len(part) == 0:
             break
     return data
-def extract_html_page(target_host):
-    global my_var
-    #target_host2 = "riweb.tibeica.com"
-    target_host2 = urlparse(target_host).netloc
-    if not (os.path.isdir(os.path.join('work_directory',target_host2))):
-        os.mkdir(os.path.join('work_directory',target_host2))
+def extract_html_page(url,domain):
+    target_host2 = urlparse(url).netloc
+    if not (os.path.isdir(os.path.join('work_directory',domain))):
+        os.mkdir(os.path.join('work_directory',domain))
     client = "RIWEB_CRAWLER"
     target_port = 80  # create a socket object
     client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     # connect the client
-    client.connect((target_host2, target_port))
-
-
+    client.connect((domain, target_port))
     # send some data
-    request = "GET {} HTTP/1.1\r\nHost: {}\r\nUser-Agent: {}\r\n\r\n".format(target_host, target_host2, client)
+    request = "GET {} HTTP/1.1\r\nHost: {}\r\nUser-Agent: {}\r\n\r\n".format(url, domain, client)
 
     client.send(request.encode())
-
-
     # =========================Read step by step===============================
     CHUNK_SIZE = 36  # you can set it larger or smaller
     lines = []
@@ -55,20 +50,15 @@ def extract_html_page(target_host):
     #print(target_host)
     #print(buffer)
     if '200 OK' in firstline:
-
         data = recvall(client)
+        data = buffer + data
         data = data.decode()
-        data_lower = data.lower()
-        # print(data_lower.find('<!doctype'))
-        if data_lower.find('<!doctype') > -1:
-            data_to_store = data[data_lower.find('<!doctype'):data_lower.find('</html>') + 8]
-        else:
-            data_to_store = data[data_lower.find('<html'):data_lower.find('</html>') + 8]
+        data_to_store = data[data.find('\r\n\r\n'):]
         #client.close()
         return data_to_store
     else:
         print(firstline)
-        print(target_host)
+        print(domain+url)
         data = data + buffer
         data += recvall(client)
         with open('error_page.txt', 'w') as file:
@@ -79,7 +69,10 @@ def crawler():
     counter = 0
     for L in Q:
         #print(L)
-        P = extract_html_page(L)
+        domain = urlparse(L).netloc
+        url = urlparse(L).path
+        #print(url)
+        P = extract_html_page(url,domain)
         if P is not None:
             getpage_soup = BeautifulSoup(P, 'html.parser')
             metas = getpage_soup.find_all('meta')
@@ -109,12 +102,8 @@ def crawler():
                     nume_fisier = 'index.html'
                 else:
                     nume_fisier = path[-1]
-                with open('{}\{}.html'.format(current_path,nume_fisier.split('.')[0]), 'w') as file:
-                    file.write(P)
-                    if counter > 99:
-                        break
-                    else:
-                        counter += 1
+                with open('{}\{}.html'.format(current_path,nume_fisier.split('.')[0]), 'wb') as file:
+                    file.write(P.encode('utf8'))
             if permission2 == True:
                 a_tags = getpage_soup.find_all('a',href = True)
                 for a_tag in a_tags:

@@ -1,0 +1,14 @@
+HTTP/1.1 301 Moved Permanently
+Date: Sun, 31 May 2020 07:27:54 GMT
+Server: Apache/2.4.18 (Ubuntu)
+Location: http://httpd.apache.org/docs/2.0/developer/filters.html
+Content-Length: 263
+Content-Type: text/html; charset=iso-8859-1
+
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>301 Moved Permanently</title>
+</head><body>
+<h1>Moved Permanently</h1>
+<p>The document has moved <a href="http://httpd.apache.org/docs/2.0/developer/filters.html">here</a>.</p>
+</body></html>
