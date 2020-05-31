@@ -1,6 +1,7 @@
 import socket
 import random
 import time
+import sys
 s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 to_send = ("81.180.223.1",53)
 s.connect(to_send)
@@ -9,7 +10,9 @@ print(adress)
 s.close()
 s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
-
+adress = socket.getaddrinfo("81.180.223.1",53)
+print(adress)
+#sys.exit(1)
 mesaj = bytearray(31)
 mesaj[1] = (0xFF) & (random.randint(0,254)+1)
 mesaj[5] = 1
@@ -30,7 +33,7 @@ for elem in mesaj:
     mesaj_hex.append(hex(elem))
 packet = (mesaj, adress)
 print(s.sendto(mesaj, (to_send)))
-time.sleep(3)
+#time.sleep(3)
 response = s.recv(512)
 hex_array = []
 for elem in response:

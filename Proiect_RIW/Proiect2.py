@@ -4,12 +4,16 @@ from bs4 import BeautifulSoup
 import socket
 import datetime
 import os
-import dns
+# noinspection PyUnresolvedReferences
+from DNS_From_Internet import DNSCache,DNSServer
+# noinspection PyUnresolvedReferences
+from HTTPParser import extract_html_page
 ##########################################################################
 ########################### VARIABLES ####################################
 ##########################################################################
 Q = ["http://riweb.tibeica.com/crawl/"]
 my_var = 0
+adresses_for_domains = {}
 ##########################################################################
 ########################### FUNCTIONS ####################################
 ##########################################################################
@@ -17,62 +21,27 @@ def isabsolute(url):
     return bool(urlparse(url).netloc)
 
 # =========================Function for receiving data===========================
-def recvall(sock):
-    BUFF_SIZE = 4096  # 4 KiB
-    data = b''
-    while True:
-        part = sock.recv(BUFF_SIZE)
-        data += part
-        if b'</html>' in part.lower() or len(part) == 0:
-            break
-    return data
-def extract_html_page(url,domain):
-    target_host2 = urlparse(url).netloc
-    if not (os.path.isdir(os.path.join('work_directory',domain))):
-        os.mkdir(os.path.join('work_directory',domain))
-    client = "RIWEB_CRAWLER"
-    target_port = 80  # create a socket object
-    client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    # connect the client
-    client.connect((domain, target_port))
-    # send some data
-    request = "GET {} HTTP/1.1\r\nHost: {}\r\nUser-Agent: {}\r\n\r\n".format(url, domain, client)
-
-    client.send(request.encode())
-    # =========================Read step by step===============================
-    CHUNK_SIZE = 36  # you can set it larger or smaller
-    lines = []
-    buffer = bytearray()
-    buffer.extend(client.recv(CHUNK_SIZE))
-    firstline = buffer[:buffer.find(b'\n')]
-    firstline = buffer.decode()
-    data = b''
-    #print(target_host)
-    #print(buffer)
-    if '200 OK' in firstline:
-        data = recvall(client)
-        data = buffer + data
-        data = data.decode()
-        data_to_store = data[data.find('\r\n\r\n'):]
-        #client.close()
-        return data_to_store
-    else:
-        print(firstline)
-        print(domain+url)
-        data = data + buffer
-        data += recvall(client)
-        with open('error_page.txt', 'w') as file:
-            file.write(data.decode())
-        pass
-        #client.close()
 def crawler():
     counter = 0
     for L in Q:
+        if counter>100:
+            break
+        else:
+            counter+=1
         #print(L)
+        P = None
         domain = urlparse(L).netloc
         url = urlparse(L).path
         #print(url)
-        P = extract_html_page(url,domain)
+        if domain not in adresses_for_domains:
+            adresses_for_domains[domain] = []
+        adresses_for_domains[domain] = DNSCache(domain,adresses_for_domains[domain])
+        ip_adr = adresses_for_domains[domain]['ip_address']
+        #ip_adr = DNSServer(domain)['ip_address']
+        #print(adresses_for_domains)
+        if ip_adr is not  None:
+            P = extract_html_page(url,domain,ip_adr)
+
         if P is not None:
             getpage_soup = BeautifulSoup(P, 'html.parser')
             metas = getpage_soup.find_all('meta')

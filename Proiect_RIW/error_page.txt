@@ -1,14 +1,15 @@
 HTTP/1.1 301 Moved Permanently
-Date: Sun, 31 May 2020 07:27:54 GMT
-Server: Apache/2.4.18 (Ubuntu)
-Location: http://httpd.apache.org/docs/2.0/developer/filters.html
-Content-Length: 263
-Content-Type: text/html; charset=iso-8859-1
+Server: Varnish
+Retry-After: 0
+Location: https://www.python.org/
+Content-Length: 0
+Accept-Ranges: bytes
+Date: Sun, 31 May 2020 18:12:28 GMT
+Via: 1.1 varnish
+Connection: close
+X-Served-By: cache-hhn4082-HHN
+X-Cache: HIT
+X-Cache-Hits: 0
+X-Timer: S1590948749.892706,VS0,VE0
+Strict-Transport-Security: max-age=63072000; includeSubDomains
 
-<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
-<html><head>
-<title>301 Moved Permanently</title>
-</head><body>
-<h1>Moved Permanently</h1>
-<p>The document has moved <a href="http://httpd.apache.org/docs/2.0/developer/filters.html">here</a>.</p>
-</body></html>
