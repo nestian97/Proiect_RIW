@@ -2,6 +2,10 @@ import urllib
 import os
 import socket
 from urllib.parse import urlparse
+import sys
+# noinspection PyUnresolvedReferences
+from header import coada_de_explorare,Q
+
 def isabsolute(url):
     return bool(urlparse(url).netloc)
 
@@ -15,7 +19,7 @@ def recvall(sock):
         if b'</html>' in part.lower() or len(part) == 0:
             break
     return data
-def extract_html_page(url,domain,ip):
+def extract_html_page(url,domain,ip,adress):
     target_host2 = urlparse(url).netloc
     if not (os.path.isdir(os.path.join('work_directory',domain))):
         os.mkdir(os.path.join('work_directory',domain))
@@ -54,10 +58,12 @@ def extract_html_page(url,domain,ip):
             #client.close()
             return data_to_store
         else:
-            #print(firstline)
-            #print(domain+url)
             data = data + buffer
             data += recvall(client)
+
+            if '301' in firstline:
+                print(firstline)
+                check_301_status(data.decode(),adress)
             with open('error_page.txt', 'w') as file:
                 file.write(data.decode())
             pass
@@ -65,3 +71,27 @@ def extract_html_page(url,domain,ip):
     except Exception as e:
         print(e)
         pass
+
+def check_301_status(data,adress):
+    for header in data.split('\r\n'):
+        if 'Location' in header:
+            new_location = header.split(': ')[1]
+            if coada_de_explorare[adress]['retry'] <5:
+                coada_de_explorare[adress]['retry'] +=1
+                coada_de_explorare[adress]['explorat'] = True
+                coada_de_explorare[new_location] = {'explorat':False,'retry':coada_de_explorare[adress]['retry']}
+                Q.append(new_location)
+                print(new_location,adress)
+                sys.exit(1)
+def check_307_status(data,adress):
+    for header in data.split('\r\n'):
+        if 'Location' in header:
+            new_location = header.split(': ')[1]
+            if coada_de_explorare[adress]['retry'] <5:
+                coada_de_explorare[adress]['retry'] +=1
+                coada_de_explorare[adress]['explorat'] = True
+                coada_de_explorare[new_location] = {'explorat':False,'retry':coada_de_explorare[adress]['retry']}
+                Q.append(new_location)
+    #sys.exit(1)
+
+
