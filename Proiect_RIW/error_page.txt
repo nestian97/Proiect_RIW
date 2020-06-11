@@ -1,13 +1,15 @@
-HTTP/1.1 404 Not Found
-Date: Mon, 01 Jun 2020 11:28:28 GMT
-Server: Apache/2.4.18 (Ubuntu)
-Content-Length: 196
-Content-Type: text/html; charset=iso-8859-1
+HTTP/1.1 301 Moved Permanently
+Date: Thu, 11 Jun 2020 13:28:29 GMT
+Content-Type: text/html
+Content-Length: 162
+Connection: keep-alive
+Location: https://www.leaseweb.com/
+Server: SE-1.15.8
 
-<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
-<html><head>
-<title>404 Not Found</title>
-</head><body>
-<h1>Not Found</h1>
-<p>The requested URL was not found on this server.</p>
-</body></html>
+<html>
+<head><title>301 Moved Permanently</title></head>
+<body>
+<center><h1>301 Moved Permanently</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>

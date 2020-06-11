@@ -195,22 +195,29 @@ def resolve_host_name(host_name_to):
   elif (response_code == "1"):
 
     print("\nFormat error. Unable to interpret query.\n")
+    return None
 
   elif (response_code == "2"):
 
     print("\nServer failure. Unable to process query.\n")
+    return None
 
   elif (response_code == "3"):
-
+    print(host_name_to)
     print("\nName error. Domain name does not exist.\n")
+    return None
+
 
   elif (response_code == "4"):
 
     print("\nQuery request type not supported.\n")
+    return None
 
   elif (response_code == "5"):
 
     print("\nServer refused query.\n")
+    return None
+
   a  = datetime.datetime.now()
   if result['expire'] is not None:
     a = a +datetime.timedelta(seconds=result['expire'])
@@ -224,11 +231,14 @@ def DNSServer(HOST_NAME):
 def DNSCache(HOST_NAME,adresses):
   if (len(adresses) == 0):
     adresses = DNSServer(HOST_NAME)
-    print('Prima cerere pentru domeniul:',adresses['host_name'])
+    if adresses is None:
+      return None
+
   else:
     if adresses['expire'] is not None:
       if adresses['expire'] < datetime.datetime.now():
         adresses = DNSServer(HOST_NAME)
+        print('TTl expirat:', adresses['host_name'])
   return adresses
 
 
@@ -236,7 +246,7 @@ if __name__ == "__main__":
 
   # Get the host name from the command line.
 
-  HOST_NAME = "www.tuiasi.ro"
+  HOST_NAME = "CGI-Spec.Golux.Com/"
 
   result = resolve_host_name(HOST_NAME)
 

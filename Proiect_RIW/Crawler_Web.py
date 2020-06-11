@@ -6,13 +6,10 @@ import socket
 import datetime
 import sys
 import os
-import requests
-# noinspection PyUnresolvedReferences
 from DNS_From_Internet import DNSCache,DNSServer
-# noinspection PyUnresolvedReferences
 from HTTPParser import extract_html_page
-# noinspection PyUnresolvedReferences
-from header import coada_de_explorare,Q
+from header import coada_de_explorare,Q,robo_dict
+import robots as rb
 ##########################################################################
 ########################### VARIABLES ####################################
 ##########################################################################
@@ -29,30 +26,28 @@ def isabsolute(url):
 # =========================Function for receiving data===========================
 def crawler():
     counter = 0
-    for L in Q:
-        if counter > 1000:
-            break
-        else:
-            counter += 1
 
+    for L in Q:
         P = None
+        if counter>100:
+            print (L)
+        else:
+            counter+=1
+        if coada_de_explorare[L]['explorat'] == True:
+            continue
         domain = urlparse(L).netloc
         url = urlparse(L).path
         baselink = urlparse(L).scheme+ '://' + domain
         if not (os.path.isdir(os.path.join('work_directory', domain))):
             os.mkdir(os.path.join('work_directory', domain))
-        if not os.path.isfile(os.path.join('work_directory',domain,'robots.txt')):
-            robo = getrobots(baselink)
-            with open (os.path.join('work_directory',domain,'robots.txt'),'w') as file:
-                file.write(robo)
+
+        if domain not in robo_dict:
+            robo = rb.getrobo(baselink)
         else:
-            with open(os.path.join('work_directory',domain, 'robots.txt'),'r') as file:
-                robo = file.read()
-                #print(robo)
-        #for line in robo.split('\n'):
-        conditii = robo.split('User-agent: *')[1]
-        print(conditii)
-        sys.exit()
+            robo = robo_dict[domain]
+        if robo is not None:
+            if not rb.canfetch(robo,url,'RIWEB_CRAWLER'):
+                continue
         path = domain+url
         # if path.split('/')[-1] == '':
         #     if os.path.isfile(os.path.join('work_directory',path,'index.html')):
@@ -65,8 +60,12 @@ def crawler():
         #         continue
         #print(url)
         if domain not in adresses_for_domains:
-            adresses_for_domains[domain] = []
-        adresses_for_domains[domain] = DNSCache(domain,adresses_for_domains[domain])
+            adresses_for_domains[domain] = {}
+        #print(adresses_for_domains)
+        if adresses_for_domains[domain] is not None:
+            adresses_for_domains[domain] = DNSCache(domain,adresses_for_domains[domain])
+        if adresses_for_domains[domain] is None:
+            continue
         ip_adr = adresses_for_domains[domain]['ip_address']
         #ip_adr = DNSServer(domain)['ip_address']
         #print(adresses_for_domains)
@@ -114,6 +113,7 @@ def crawler():
                         if link[:link.find(':')] == 'http' or link[:link.find(':')] == 'https':
                             link = link.split('#')[0]
                             if link not in coada_de_explorare.keys():
+
                                 coada_de_explorare[link] = {'retry': 0, 'explorat': False}
                                 Q.append(link)
                     else:
@@ -130,12 +130,9 @@ def crawler():
     print(len(Q))
     print(Q)
 
-def getrobots(link):
-    response = requests.get("{}/robots.txt".format(link))
-    test = response.text
-    return test
 
 if __name__ == "__main__":
     start_time = datetime.datetime.now()
+    print ('A inceput la: ',start_time)
     crawler()
     print('A durat:', str(datetime.datetime.now() - start_time))

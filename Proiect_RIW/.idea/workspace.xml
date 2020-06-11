@@ -1,7 +1,182 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="fb6f4e44-789e-489e-96c9-ad9a1110dce4" name="Default Changelist" comment="" />
+    <list default="true" id="fb6f4e44-789e-489e-96c9-ad9a1110dce4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Proiect_RIW.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Proiect_RIW.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DNS_From_Internet.py" beforeDir="false" afterPath="$PROJECT_DIR$/DNS_From_Internet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTTPParser.py" beforeDir="false" afterPath="$PROJECT_DIR$/HTTPParser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Proiect2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Proiect2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/error_page.txt" beforeDir="false" afterPath="$PROJECT_DIR$/error_page.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/header.py" beforeDir="false" afterPath="$PROJECT_DIR$/header.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/httpd.apache.org/ABOUT_APACHE.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/httpd.apache.org/apreq/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/httpd.apache.org/bug_report.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/httpd.apache.org/contribute/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/httpd.apache.org/contributors/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/httpd.apache.org/dev/API.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/httpd.apache.org/dev/debugging.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/httpd.apache.org/dev/devnotes.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/httpd.apache.org/dev/download.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/httpd.apache.org/dev/guidelines.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/httpd.apache.org/dev/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/httpd.apache.org/dev/patches.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/httpd.apache.org/dev/project-plan.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/httpd.apache.org/dev/release.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/httpd.apache.org/dev/styleguide.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/httpd.apache.org/dev/todo.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/httpd.apache.org/dev/verification.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/httpd.apache.org/dev/voting.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/httpd.apache.org/docs-project/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/httpd.apache.org/docs/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/httpd.apache.org/docs/trunk/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/httpd.apache.org/docs/trunk/new_features_2_4.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/httpd.apache.org/download.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/httpd.apache.org/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/httpd.apache.org/info/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/httpd.apache.org/lists.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/httpd.apache.org/mod_fcgid/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/httpd.apache.org/mod_ftp/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/httpd.apache.org/security_report.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/httpd.apache.org/support.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/httpd.apache.org/test/flood/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/httpd.apache.org/test/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/incubator.apache.org/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/work_directory/incubator.apache.org/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/about.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/app-changes.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/contents.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/dir-conn-ch.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/dir-conn.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/dir-filter-if.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/dir-filter-of.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/dir-filter.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/dir-handlers-ach.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/dir-handlers-auh.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/dir-handlers-auzh.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/dir-handlers-fuh.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/dir-handlers-hph.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/dir-handlers-pch.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/dir-handlers-ph.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/dir-handlers-pih.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/dir-handlers-plh.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/dir-handlers-prrh.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/dir-handlers-syn.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/dir-handlers-th.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/dir-handlers-tph.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/dir-handlers.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/dir-other-epd.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/dir-other-ipd.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/dir-other-ipdv.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/dir-other-par.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/dir-other-pd.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/dir-other-phm.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/dir-other-pi.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/dir-other-pimp.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/dir-other-po.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/dir-other-pomz.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/dir-other-pp.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/dir-other.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/directives.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/front.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/genindex.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/hand-cgi.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/hand-psp.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/hand-pub-alg-args.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/hand-pub-alg-auth.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/hand-pub-alg-trav.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/hand-pub-alg.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/hand-pub-intro.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/hand-pub.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/handlers.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/inst-apacheconfig.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/inst-compiling.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/inst-configure.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/inst-installing.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/inst-make.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/inst-makeinstall.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/inst-prerequisites.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/inst-testing.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/inst-trouble.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/installation.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/intr-flexibility.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/intr-history.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/intr-performance.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/introduction.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/modpython.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/module-apache.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/node94.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/node97.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/node98.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/pyapi-apmeth.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/pyapi-conn.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/pyapi-cookie-classes.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/pyapi-cookie-example.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/pyapi-cookie-func.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/pyapi-cookie.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/pyapi-filter.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/pyapi-handler.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/pyapi-interps.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/pyapi-mpconn-mem.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/pyapi-mpconn-meth.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/pyapi-mpconn.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/pyapi-mpfilt-mem.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/pyapi-mpfilt-meth.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/pyapi-mpfilt.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/pyapi-mprequest-mem.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/pyapi-mprequest-meth.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/pyapi-mprequest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/pyapi-mpserver.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/pyapi-mpsrv-mem.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/pyapi-mpsrv-meth.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/pyapi-mptable.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/pyapi-psp.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/pyapi-sess-classes.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/pyapi-sess-example.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/pyapi-sess.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/pyapi-util-fstor-fld.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/pyapi-util-fstor.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/pyapi-util-funcs.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/pyapi-util.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/pythonapi.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/tut-404-handler.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/tut-more-complicated.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/tut-overview.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/tut-pub.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/tut-what-it-do.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/crawl/tutorial.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/riweb.tibeica.com/robots.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/svn.apache.org/viewvc/httpd/httpd/branches/2.4.x/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/svn.apache.org/viewvc/httpd/httpd/trunk/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/svn.apache.org/viewvc/httpd/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/tomcat.apache.org/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/work_directory/tomcat.apache.org/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/wp.netscape.com/newsref/std/cookie_spec.html" beforeDir="false" afterPath="$PROJECT_DIR$/work_directory/wp.netscape.com/newsref/std/cookie_spec.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/www.apache.org/foundation/dyn/closer.html" beforeDir="false" afterPath="$PROJECT_DIR$/work_directory/www.apache.org/foundation/dyn/closer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/www.apache.org/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/work_directory/www.apache.org/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/www.charitynavigator.org/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/work_directory/www.charitynavigator.org/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/www.ispol.com/home/grisha/httpdapy/httpdapy-0.1b/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work_directory/www.ispol.com/home/grisha/httpdapy/index.html" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,23 +189,29 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="ProjectId" id="1awOqC9kyIGSJSs1dObfAqAsWd1" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Laboratoare/Lab1" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Proiect_RIW" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="Proiect_RIW" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.Crawler_Web">
+    <configuration name="Crawler_Web" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Proiect_RIW" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -42,7 +223,91 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Proiect_RIW.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Crawler_Web.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="DNS_From_Internet" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Proiect_RIW" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DNS_From_Internet.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="HTTPParser" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Proiect_RIW" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/HTTPParser.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Proiect2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Proiect_RIW" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Proiect2.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="robots" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Proiect_RIW" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/robots.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -53,7 +318,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Proiect_RIW" />
+        <item itemvalue="Python.Crawler_Web" />
+        <item itemvalue="Python.HTTPParser" />
+        <item itemvalue="Python.DNS_From_Internet" />
+        <item itemvalue="Python.robots" />
+        <item itemvalue="Python.Proiect2" />
       </list>
     </recent_temporary>
   </component>
@@ -70,26 +339,45 @@
     </task>
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="WindowStateProjectService">
+    <state x="484" y="8" key="#robots" timestamp="1591877470430">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="484" y="8" key="#robots/0.0.1536.824@0.0.1536.824" timestamp="1591877470430" />
     <state x="548" y="167" key="FileChooserDialogImpl" timestamp="1587648002654">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="548" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1587648002654" />
-    <state width="1515" height="210" key="GridCell.Tab.0.bottom" timestamp="1587648004255">
+    <state width="1515" height="208" key="GridCell.Tab.0.bottom" timestamp="1591887888575">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587648004255" />
-    <state width="1515" height="210" key="GridCell.Tab.0.center" timestamp="1587648004255">
+    <state width="1515" height="208" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1591887888575" />
+    <state width="1515" height="208" key="GridCell.Tab.0.center" timestamp="1591887888575">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1587648004255" />
-    <state width="1515" height="210" key="GridCell.Tab.0.left" timestamp="1587648004255">
+    <state width="1515" height="208" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1591887888575" />
+    <state width="1515" height="208" key="GridCell.Tab.0.left" timestamp="1591887888575">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1587648004255" />
-    <state width="1515" height="210" key="GridCell.Tab.0.right" timestamp="1587648004255">
+    <state width="1515" height="208" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1591887888575" />
+    <state width="1515" height="208" key="GridCell.Tab.0.right" timestamp="1591887888575">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1587648004255" />
+    <state width="1515" height="208" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1591887888575" />
+    <state x="277" y="57" key="SettingsEditor" timestamp="1591873687753">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1591873687753" />
   </component>
 </project>
