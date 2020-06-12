@@ -10,12 +10,16 @@ def getrobo(baselink):
     rp.set_url(baselink + '/robots.txt')
     try:
         rp.read()
-        with open(os.path.join('work_directory',domain,'robots.txt'), 'w') as file:
-            file.write(str(rp))
-            robo_dict[domain] = rp
+        #if not (os.path.isdir(os.path.join('work_directory', domain))):
+        #    os.mkdir(os.path.join('work_directory', domain))
+        #with open(os.path.join('work_directory',domain,'robots.txt'), 'w') as file:
+        #    file.write(str(rp))
+        robo_dict[domain] = rp
     except:
-        with open(os.path.join('work_directory',domain,'robots.txt'), 'w') as file:
-            file.write('')
+        #if not (os.path.isdir(os.path.join('work_directory', domain))):
+        #    os.mkdir(os.path.join('work_directory', domain))
+        #with open(os.path.join('work_directory',domain,'robots.txt'), 'w') as file:
+        #    file.write('')
             robo_dict[domain] = None
             rp = None
     return rp

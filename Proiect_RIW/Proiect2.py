@@ -51,8 +51,8 @@ def crawler():
                 #print(robo)
         #for line in robo.split('\n'):
         conditii = robo.split('User-agent: *')[1]
-        print(conditii)
-        sys.exit()
+        #print(conditii)
+        #sys.exit()
         path = domain+url
         # if path.split('/')[-1] == '':
         #     if os.path.isfile(os.path.join('work_directory',path,'index.html')):

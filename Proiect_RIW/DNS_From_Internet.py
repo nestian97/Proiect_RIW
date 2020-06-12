@@ -220,7 +220,7 @@ def resolve_host_name(host_name_to):
 
   a  = datetime.datetime.now()
   if result['expire'] is not None:
-    a = a +datetime.timedelta(seconds=result['expire'])
+    a = a + datetime.timedelta(seconds=result['expire'])
     result['expire'] = a
   return result
 
@@ -246,10 +246,10 @@ if __name__ == "__main__":
 
   # Get the host name from the command line.
 
-  HOST_NAME = "CGI-Spec.Golux.Com/"
+  HOST_NAME = "www.dscpl.com.au"
 
   result = resolve_host_name(HOST_NAME)
-
+  #print(result)
   print("\nHost Name:\n" + str(result['host_name']))
   print("\nIP Address:\n" + str(result['ip_address']) + "\n")
   print("\nTTL:\n" + str(result['expire']) + "\n")
