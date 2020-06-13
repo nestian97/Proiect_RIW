@@ -8,7 +8,7 @@ from HTTPParser import extract_html_page
 from header import coada_de_explorare, Q, robo_dict
 import robots as rb
 import shutil
-
+import time
 ##########################################################################
 ########################### VARIABLES ####################################
 ##########################################################################
@@ -81,11 +81,13 @@ def crawler():
 
         if ip_adr is not None or ip_adr != '':
             current_time = datetime.datetime.now()
+            print(L)
             if old_time is None:
                 P = extract_html_page(url, domain, ip_adr, L)
                 old_domain = domain
+                old_time = current_time
             elif (current_time - old_time).total_seconds() < 1 and old_domain == domain:
-                time.sleep(1)
+                time.sleep(1-(current_time - old_time).total_seconds())
                 P = extract_html_page(url, domain, ip_adr, L)
                 old_time = current_time
             else:

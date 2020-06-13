@@ -1,5 +1,0 @@
-User-agent: RIWEB_CRAWLER
-Allow: 
-
-User-agent: *
-Disallow: /
